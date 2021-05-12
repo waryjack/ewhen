@@ -71,8 +71,3 @@ Custom ability names is functional for characters only, not for vehicles.
 * Weights and costs for weapons and armor (there, but not wired in yet)
 * Localization fixes
 * Refactoring and cleanup - ugly hacky code.
-
-## Fixes/Issues
-
-* Vehicle sheet image background removal
-* Alignment of elements / CSS revisions
