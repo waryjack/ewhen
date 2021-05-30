@@ -1,33 +1,33 @@
 {
-    "name": "ewhen",
-    "title": "Everywhen (Unofficial)",
-    "description": "Everywhen RPG System (Unofficial)",
-    "version": "0.2.2",
-    "author": "Cannyjack (Chris Clouser)",
-    "esmodules": [
-        "module/ewhen.js"
+  "name": "ewhen",
+  "title": "Everywhen (Unofficial)",
+  "description": "Everywhen RPG System (Unofficial)",
+  "version": "0.2.2",
+  "author": "Cannyjack (Chris Clouser)",
+  "esmodules": [
+      "module/ewhen.js"
+  ],
+  "scripts": [],
+  "styles": [
+      "styles/ewhen.css"
+  ],
+  "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      }
     ],
-    "scripts": [],
-    "styles": [
-        "styles/ewhen.css"
-    ],
-    "languages": [
-        {
-          "lang": "en",
-          "name": "English",
-          "path": "lang/en.json"
-        }
-      ],
-    
-    "initiative":"@priority_roll.expression+@main_attributes.mind.rank+@combat_attributes.initiative.rank",
-    "gridDistance": 5,
-    "gridUnits": "ft",
-    "primaryTokenAttribute": "@resources.lifeblood",
-    "secondaryTokenAttribute": "@resources.resolve",
-    "minimumCoreVersion": "0.7.7",
-    "compatibleCoreVersion": "0.7.10",
-    "url": "https://github.com/waryjack/ewhen",
-    "manifest": "https://github.com/waryjack/ewhen/releases/latest/download/system.json",
-    "download": "https://github.com/waryjack/ewhen/releases/latest/download/ewhen-master.zip"
+
+  "initiative":"@priority_roll.expression+@main_attributes.mind.rank+@combat_attributes.initiative.rank",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "@resources.lifeblood",
+  "secondaryTokenAttribute": "@resources.resolve",
+  "minimumCoreVersion": "0.7.7",
+  "compatibleCoreVersion": "0.7.10",
+  "url": "https://github.com/waryjack/ewhen",
+  "manifest": "https://github.com/waryjack/ewhen/releases/latest/download/system.json",
+  "download": "https://github.com/waryjack/ewhen/releases/latest/download/ewhen-master.zip"
 
 }
