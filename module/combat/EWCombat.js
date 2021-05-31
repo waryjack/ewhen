@@ -1,5 +1,3 @@
-import { DICE_MODELS, DEFAULT_DICE_MODEL } from '../diceModels.js'
-
 export class EWCombat extends Combat {
 
      /**
@@ -25,12 +23,11 @@ export class EWCombat extends Combat {
 
         if(game.settings.get("ewhen", "initType") != "EWhenPriority") { return; }
 
-        const diceType = game.settings.get("ewhen", "diceType")
-        const diceModel = DICE_MODELS[diceType] || DEFAULT_DICE_MODEL
-
         var adjInit = 0;
         var isPC;
         console.log("Combatant in convertInit: ", com);
+        var snakeEyes = false;
+        var boxCars = false;
         let initRoll = com.initiative;
         let actorId = com.actor.data._id;
         let actor = game.actors.get(actorId);
@@ -45,6 +42,9 @@ export class EWCombat extends Combat {
         let ini = actor.getAttribute("initiative").rank;
         let diceOnly = initRoll - mnd - ini;
 
+        if (diceOnly == 12) { boxCars = true; }
+        if (diceOnly == 2) { snakeEyes = true;}
+
         if(!isPC){
         // todo - work on Rivals with "Diabolical Plan" feat;
             if (isRival) { adjInit = 5; }
@@ -56,16 +56,16 @@ export class EWCombat extends Combat {
         console.log(name, " isPC: ", isPC);;
 
         if (isPC) {
-            if(diceOnly >= diceModel.success) {
+            if(boxCars) {
                 // mighty success; initiative = 8
                 adjInit = 8;
-            } else if (initRoll >= diceModel.tn && diceOnly < diceModel.success && diceOnly > diceModel.failure) {
+            } else if (initRoll >= 9 && diceOnly < 12 && diceOnly > 2) {
                 // regular success; initiative = 6
                 adjInit = 6;
-            } else if (initRoll < diceModel.tn && diceOnly < diceModel.success && diceOnly > diceModel.failure) {
+            } else if (initRoll < 9 && diceOnly < 12 && diceOnly > 2) {
                 // regular failure; initiative = 3
                 adjInit = 3;
-            } else if (diceOnly <= diceModel.failure) {
+            } else if (snakeEyes) {
                 // calam failure, initiative = 1
                 adjInit = 1;
             }

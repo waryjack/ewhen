@@ -1,23 +1,23 @@
 {
-  "name": "ewhen",
-  "title": "Everywhen (Unofficial)",
-  "description": "Everywhen RPG System (Unofficial)",
-  "version": "0.2.2",
-  "author": "Cannyjack (Chris Clouser)",
-  "esmodules": [
-      "module/ewhen.js"
-  ],
-  "scripts": [],
-  "styles": [
-      "styles/ewhen.css"
-  ],
-  "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "lang/en.json"
-      },
-      {
+    "name": "ewhen",
+    "title": "Everywhen (Unofficial)",
+    "description": "Everywhen RPG System (Unofficial)",
+    "version": "0.2.2",
+    "author": "Cannyjack (Chris Clouser)",
+    "esmodules": [
+        "module/ewhen.js"
+    ],
+    "scripts": [],
+    "styles": [
+        "styles/ewhen.css"
+    ],
+    "languages": [
+        {
+          "lang": "en",
+          "name": "English",
+          "path": "lang/en.json"
+        },
+        {
           "lang": "fr",
           "name": "French",
           "path": "lang/fr.json"
@@ -34,4 +34,5 @@
     "url": "https://github.com/waryjack/ewhen",
     "manifest": "https://github.com/waryjack/ewhen/releases/latest/download/system.json",
     "download": "https://github.com/waryjack/ewhen/releases/latest/download/ewhen-master.zip"
+
 }
