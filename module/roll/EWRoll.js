@@ -71,6 +71,8 @@ export class EWRoll {
         *  Figure out actual roll based on penalty / bonus dice
         *  Bonus dice cancel penalties, so the net amount is determined
         *  Then that tells us whether diceSuffix is kh2 or kl2
+        * 
+        *  Needs adjustment for new variable die type code
         */
         
         bdNum = Number(this.html.find("#bdice").val());
@@ -102,7 +104,7 @@ export class EWRoll {
        }
 
        /*
-       * Get the base difficulty modifier
+       * Get the base difficulty modifier / modified by base dice type, eventually
        */ 
        switch (difflevel) {
            case "very_easy": baseDiff = 2; break;

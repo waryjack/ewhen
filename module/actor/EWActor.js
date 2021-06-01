@@ -101,8 +101,31 @@ export class EWActor extends Actor {
         const priority = duplicate(this.data.data.priority_roll);
         var newSuffix;
         let netExtraDice = priority.bd - priority.pd;
+       
+        /**
+         * To do: add fixes for selectable dice type; 3d6 requires some minor manipulations 
+         * to adjust keep highest / keep lowest. 
+         * 
+         * Rough Fix code in comments below, pending PR.
+         */
 
-        netExtraDice < 0 ? newSuffix = "kl2" : newSuffix = priority.suffix;
+        /*
+        const sysDice = game.settings.get("ewhen", "diceType");
+        const sysDiceType = diceModel[sysDice].baseType;
+        let numPriorityDice = priority.numDice;        
+
+        (netExtraDice < 0) ? newSuffix = ((systemDice == "3d6") ? "kl3" : "kl2") : newSuffix = ((systemDice == "3d6") ? "kh3": "kh2");
+
+        numPriorityDice = (sysDice == "3d6") ? 3 : 2;
+        
+        let finalFormula = (numPriorityDice + Math.abs(netExtraDice)) + sysDiceType + newSuffix + "+" + priority.miscMod;
+
+
+        */
+
+        netExtraDice < 0 ? newSuffix = "kl2" : newSuffix = priority.suffix; 
+
+     
 
         let finalFormula = (Number(priority.numDice) + Math.abs(netExtraDice)) + "d6" + newSuffix + "+" + priority.miscMod;
 
